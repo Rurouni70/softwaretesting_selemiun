@@ -5,6 +5,7 @@ link = 'http://localhost/litecart/admin/login.php'
 login = 'admin'
 password = 'admin'
 
+
 @pytest.fixture
 def driver(request):
     wd = webdriver.Chrome()
@@ -30,7 +31,7 @@ def test_for_lesson(driver):
             while sub_menu_count < len(sub_menu_list):
                 element_sub_menu = driver.find_elements_by_css_selector('#app- ul li')
                 element_sub_menu[sub_menu_count].click()
+                h1 = driver.find_elements_by_css_selector('#content > h1')
+                assert len(h1) == 1
                 sub_menu_count += 1
         num += 1
-
-
