@@ -21,6 +21,6 @@ def test_for_lesson(driver):
     all_elements_list = driver.find_elements_by_css_selector("div.content > ul > li.product")
 
     for element in all_elements_list:
-        sticker = element.find_elements_by_css_selector("div.image-wrapper > div")
+        sticker = element.find_elements_by_css_selector("div.image-wrapper > div.sticker")
         assert len(sticker) == 1
 
